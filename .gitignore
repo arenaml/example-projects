@@ -5,3 +5,4 @@ venv
 data
 models
 *.db
+.env
