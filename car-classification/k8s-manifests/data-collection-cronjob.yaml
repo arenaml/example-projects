@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ml-modelling
+  namespace: car-classification
+spec:
+  jobTemplate:
+    metadata:
+      name: ml-modelling
+    spec:
+      template:
+        spec:
+          containers:
+            - image: justingodden/car-classification-data-collection:0.1.0
+              name: ml-modelling
+              resources:
+                requests:
+                  cpu: "300m"
+                  memory: 256Mi
+          restartPolicy: OnFailure
+  schedule: 0 0 * * *
