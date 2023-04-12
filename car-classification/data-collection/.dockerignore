@@ -1,0 +1,8 @@
+.vscode
+__pycache__
+dev
+venv
+data
+models
+*.db
+.env
